@@ -129,6 +129,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // los alias más comu
          	}
          
          });
+         // Borrar
+         sym.$("borrar").click(function()
+         {
+         	sym.$("texto").html("");
+         
+         });
          sym.$("imprimir").click(function()
          {
          	var suma = dato1+dato2+dato3+dato4+dato5+dato6;
@@ -138,7 +144,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // los alias más comu
          		/////a
          		case "100000":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("a");
+         			sym.$("texto").append("a");
          			suma = "";
          			limpiarBotones();
          
@@ -146,63 +152,63 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // los alias más comu
          		/////b
          		case "110000":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("b");
+         			sym.$("texto").append("b");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////c
          		case "100100":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("c");
+         			sym.$("texto").append("c");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////d
          		case "100110":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("d");
+         			sym.$("texto").append("d");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////e
          		case "100010":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("e");
+         			sym.$("texto").append("e");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////f
          		case "110100":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("f");
+         			sym.$("texto").append("f");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////g
          		case "110110":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("g");
+         			sym.$("texto").append("g");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////h
          		case "110010":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("h");
+         			sym.$("texto").append("h");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////i
          		case "010100":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("i");
+         			sym.$("texto").append("i");
          			suma = "";
          			limpiarBotones();
          			break;
          		/////j
          		case "010110":
          			// Cambiar el texto de un elemento
-         			sym.$("texto").html("j");
+         			sym.$("texto").append("j");
          			suma = "";
          			limpiarBotones();
          			break;
@@ -401,5 +407,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // los alias más comu
    
    })("imprimir");
    //Edge symbol end:'imprimir'
+
+   //=========================================================
+   
+   //Edge symbol: 'imprimir_1'
+   (function(symbolName) {   
+   
+   })("borrar");
+   //Edge symbol end:'borrar'
 
 })(jQuery, AdobeEdge, "EDGE-3323973");

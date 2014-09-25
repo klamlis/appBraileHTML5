@@ -19,7 +19,7 @@ var symbols = {
     minimumCompatibleVersion: "4.0.1",
     build: "4.0.1.365",
     baseState: "Base State",
-    scaleToFit: "none",
+    scaleToFit: "both",
     centerStage: "horizontal",
     initialState: "Base State",
     gpuAccelerate: false,
@@ -32,6 +32,13 @@ var symbols = {
                 rect: ['14px', '12px','auto','auto','auto', 'auto'],
                 text: "App Braile",
                 font: ['Arial, Helvetica, sans-serif', [24, ""], "rgba(0,0,0,1)", "normal", "none", ""]
+            },
+            {
+                id: 'Rectangle3',
+                type: 'rect',
+                rect: ['103px', '216px','358px','109px','auto', 'auto'],
+                fill: ["rgba(255,255,255,1)"],
+                stroke: [1,"rgb(0, 0, 0)","solid"]
             },
             {
                 id: 'btn_1',
@@ -66,10 +73,15 @@ var symbols = {
             {
                 id: 'texto',
                 type: 'text',
-                rect: ['124px', '266px','319px','111px','auto', 'auto'],
-                text: "Texto",
+                rect: ['123px', '216px','319px','111px','auto', 'auto'],
+                text: "",
                 align: "left",
                 font: ['Arial, Helvetica, sans-serif', 24, "rgba(53,53,53,1)", "400", "none", "normal"]
+            },
+            {
+                id: 'borrar',
+                type: 'rect',
+                rect: ['206', '365','auto','auto','auto', 'auto']
             },
             {
                 id: 'imprimir',
@@ -85,6 +97,10 @@ var symbols = {
             {
                 id: 'btn_3',
                 symbolName: 'btn_3'
+            },
+            {
+                id: 'borrar',
+                symbolName: 'borrar'
             },
             {
                 id: 'btn_2',
@@ -112,11 +128,23 @@ var symbols = {
         "Base State": {
             "${_btn_2}": [
                 ["style", "left", '294px'],
-                ["style", "top", '121px']
+                ["style", "top", '101px']
+            ],
+            "${_btn_4}": [
+                ["style", "left", '206px'],
+                ["style", "top", '44px']
+            ],
+            "${_btn_3}": [
+                ["style", "left", '294px'],
+                ["style", "top", '155px']
             ],
             "${_btn_6}": [
                 ["style", "left", '206px'],
-                ["style", "top", '175px']
+                ["style", "top", '155px']
+            ],
+            "${_texto}": [
+                ["style", "left", '123px'],
+                ["style", "top", '216px']
             ],
             "${_Text}": [
                 ["style", "left", '14px'],
@@ -133,14 +161,14 @@ var symbols = {
             ],
             "${_btn_5}": [
                 ["style", "left", '206px'],
-                ["style", "top", '121px']
+                ["style", "top", '101px']
             ],
-            "${_btn_4}": [
-                ["style", "left", '206px']
+            "${_btn_1}": [
+                ["style", "top", '44px']
             ],
-            "${_btn_3}": [
-                ["style", "left", '294px'],
-                ["style", "top", '175px']
+            "${_borrar}": [
+                ["style", "left", '215px'],
+                ["style", "top", '339px']
             ]
         }
     },
@@ -152,14 +180,18 @@ var symbols = {
             autoPlay: true,
             timeline: [
                 { id: "eid13", tween: [ "style", "${_btn_4}", "left", '206px', { fromValue: '206px'}], position: 0, duration: 0 },
-                { id: "eid17", tween: [ "style", "${_btn_6}", "top", '175px', { fromValue: '175px'}], position: 0, duration: 0 },
+                { id: "eid29", tween: [ "style", "${_btn_6}", "top", '155px', { fromValue: '155px'}], position: 0, duration: 0 },
                 { id: "eid14", tween: [ "style", "${_btn_5}", "left", '206px', { fromValue: '206px'}], position: 0, duration: 0 },
+                { id: "eid25", tween: [ "style", "${_btn_1}", "top", '44px', { fromValue: '44px'}], position: 0, duration: 0 },
                 { id: "eid9", tween: [ "style", "${_btn_2}", "left", '294px', { fromValue: '294px'}], position: 0, duration: 0 },
-                { id: "eid15", tween: [ "style", "${_btn_5}", "top", '121px', { fromValue: '121px'}], position: 0, duration: 0 },
+                { id: "eid32", tween: [ "style", "${_borrar}", "top", '339px', { fromValue: '339px'}], position: 0, duration: 0 },
+                { id: "eid30", tween: [ "style", "${_borrar}", "left", '215px', { fromValue: '215px'}], position: 0, duration: 0 },
+                { id: "eid28", tween: [ "style", "${_btn_5}", "top", '101px', { fromValue: '101px'}], position: 0, duration: 0 },
+                { id: "eid24", tween: [ "style", "${_btn_4}", "top", '44px', { fromValue: '44px'}], position: 0, duration: 0 },
                 { id: "eid16", tween: [ "style", "${_btn_6}", "left", '206px', { fromValue: '206px'}], position: 0, duration: 0 },
-                { id: "eid12", tween: [ "style", "${_btn_3}", "top", '175px', { fromValue: '175px'}], position: 0, duration: 0 },
+                { id: "eid27", tween: [ "style", "${_btn_3}", "top", '155px', { fromValue: '155px'}], position: 0, duration: 0 },
                 { id: "eid11", tween: [ "style", "${_btn_3}", "left", '294px', { fromValue: '294px'}], position: 0, duration: 0 },
-                { id: "eid10", tween: [ "style", "${_btn_2}", "top", '121px', { fromValue: '121px'}], position: 0, duration: 0 }            ]
+                { id: "eid26", tween: [ "style", "${_btn_2}", "top", '101px', { fromValue: '101px'}], position: 0, duration: 0 }            ]
         }
     }
 },
@@ -689,6 +721,65 @@ var symbols = {
             ],
             "${_Text5}": [
                 ["style", "left", '25px'],
+                ["style", "top", '11px']
+            ],
+            "${symbolSelector}": [
+                ["style", "height", '49px'],
+                ["style", "width", '136px']
+            ]
+        }
+    },
+    timelines: {
+        "Default Timeline": {
+            fromState: "Base State",
+            toState: "",
+            duration: 0,
+            autoPlay: true,
+            timeline: [
+            ]
+        }
+    }
+},
+"borrar": {
+    version: "4.0.1",
+    minimumCompatibleVersion: "4.0.1",
+    build: "4.0.1.365",
+    baseState: "Base State",
+    scaleToFit: "none",
+    centerStage: "none",
+    initialState: "Base State",
+    gpuAccelerate: false,
+    resizeInstances: false,
+    content: {
+            dom: [
+                {
+                    rect: ['0px', '0px', '134px', '47px', 'auto', 'auto'],
+                    borderRadius: ['10px', '10px', '10px', '10px'],
+                    id: 'RoundRect',
+                    stroke: [1, 'rgb(0, 0, 0)', 'solid'],
+                    type: 'rect',
+                    fill: ['rgba(255,255,255,1)']
+                },
+                {
+                    rect: ['35px', '11px', 'auto', 'auto', 'auto', 'auto'],
+                    font: ['Arial, Helvetica, sans-serif', 24, 'rgba(53,53,53,1)', '400', 'none', 'normal'],
+                    id: 'Text5',
+                    text: 'Borrar',
+                    align: 'left',
+                    type: 'text'
+                }
+            ],
+            symbolInstances: [
+            ]
+        },
+    states: {
+        "Base State": {
+            "${_RoundRect}": [
+                ["style", "left", '0px'],
+                ["style", "top", '0px']
+            ],
+            "${_Text5}": [
+                ["style", "left", '35px'],
                 ["style", "top", '11px']
             ],
             "${symbolSelector}": [
